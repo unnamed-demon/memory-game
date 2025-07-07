@@ -1,8 +1,43 @@
+header {
+  height: 5%;
+  background-color: rgb(5, 3, 22);
+  color: white;
+}
+
+header h1 {
+  text-align: center;
+  font-size: 1.25rem;
+  line-height: 0.75;
+  padding: 0.5rem;
+  margin: 0;
+}
+
 .grid-container {
-    display: grid;
-    width: 100vmin;
-    height: 100vmin;
-    grid-template: 1fr 1fr / 1fr 1fr;
-    margin-inline: auto;
-    flex: auto;
+  height: 95%;
+  width: auto;
+  aspect-ratio: 1;
+  margin-inline: auto;
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 1fr;
+  gap: 1%;
+  padding: 1%;
+}
+
+.grid-tile img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 5%;
+}
+
+.grid-tile {
+  border-radius: 5%;
+  padding: 2%;
+  cursor: pointer;
+}
+
+.grid-tile:hover {
+  scale: 1.1;
+  transition: scale 100ms ease-in-out;
 }

@@ -13,4 +13,5 @@ html, body, #root {
 #root {
     display: flex;
     flex-direction: column;
+    background-color: rgb(15, 23, 39);
 }
