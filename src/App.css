@@ -2,6 +2,8 @@ header {
   height: 5%;
   background-color: rgb(5, 3, 22);
   color: white;
+  display: flex;
+  justify-content: space-around;
 }
 
 header h1 {
@@ -12,15 +14,40 @@ header h1 {
   margin: 0;
 }
 
+.score-container {
+  background-color: darkblue;
+}
+
+.score-container h1{
+  margin-inline: auto;
+}
+
 .grid-container {
-  height: 95%;
-  width: auto;
+  position: relative;
+  width: 100%;
   aspect-ratio: 1;
   margin-inline: auto;
   display: grid;
   grid-template: 1fr 1fr / 1fr 1fr;
   gap: 1%;
-  padding: 1%;
+  padding: 1.5%;
+  overflow: hidden;
+}
+
+.grid-tile {
+  border-radius: 5%;
+  padding: 2%;
+  cursor: pointer;
+  aspect-ratio: 1;
+}
+
+.grid-tile:hover {
+  scale: 1.1;
+  transition: scale 100ms ease-in-out;
+}
+
+.grid-tile:active {
+  box-shadow: 0 0 16px 1px hsl(0, 0%, 20%);
 }
 
 .grid-tile img {
@@ -31,13 +58,35 @@ header h1 {
   border-radius: 5%;
 }
 
-.grid-tile {
-  border-radius: 5%;
-  padding: 2%;
-  cursor: pointer;
+.loading-overlay {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  z-index: 1;
+  background-color: rgb(15, 23, 39);
 }
 
-.grid-tile:hover {
-  scale: 1.1;
-  transition: scale 100ms ease-in-out;
+.loading-overlay img {
+  height: 100%;
+  width: 100%;
+}
+
+dialog {
+  top: 50%;
+  bottom: 50%;
+  z-index: 1;
+  text-align: center;
+  border-radius: 5%;
+  scale: 2;
+  background-color: rgb(5, 3, 22);
+  color: white;
+}
+
+dialog p {
+  color: #e4e4e4;
+}
+
+button {
+  margin-inline: auto;
+  border-radius: 5px;
 }
