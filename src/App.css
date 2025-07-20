@@ -1,5 +1,4 @@
 header {
-  height: 5%;
   background-color: rgb(5, 3, 22);
   color: white;
   display: flex;
@@ -43,13 +42,20 @@ header h1 {
   min-height: 0;
 }
 
-.grid-tile:hover {
+/* .grid-tile:hover {
   scale: 1.05;
   transition: scale 100ms ease-in-out;
+} */
+
+@media (pointer: fine) {
+  .grid-tile:hover {
+    scale: 1.05;
+    transition: scale 100ms ease-in-out;
+  }
 }
 
 .grid-tile:active {
-  box-shadow: 0 0 16px 1px hsl(0, 0%, 20%);
+  background-color: black;
 }
 
 .grid-tile img {
