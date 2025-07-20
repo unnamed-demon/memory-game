@@ -23,8 +23,8 @@ function Tile({
   setUnclicked,
   gameOver,
   setGameOver,
-  fetched,
   setFetched,
+  maxScore
 }) {
   const [imgUrl, setImgUrl] = useState(loadingImg);
   const [pokenum, setPokenum] = useState(genPokenum(tileType, unclicked));
@@ -49,8 +49,6 @@ function Tile({
     fetchPokemon();
   }, [unclicked]);
 
-  console.log(fetched);
-
   return (
     <div className="grid-tile">
       <img
@@ -68,7 +66,7 @@ function Tile({
           );
 
           if (!didDeleteHappen) setGameOver(true);
-          else if (tempUnclicked.size === 0) {
+          else if (tempUnclicked.size === 150 - maxScore) {
             setUnclicked(tempUnclicked);
             setGameOver(true);
           } else {

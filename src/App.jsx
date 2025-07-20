@@ -16,8 +16,9 @@ function App() {
   const [gameOver, setGameOver] = useState(false);
   const [fetched, setFetched] = useState(0);
 
+  const maxScore = 25;
   const score = 150 - unclicked.size;
-  let dice = Math.floor(Math.random() * 4);
+  const dice = Math.floor(Math.random() * 4);
 
   function reset() {
     setFetched(0);
@@ -31,12 +32,12 @@ function App() {
       <header>
         <h1>Unnamed Demon's Memory Game</h1>
         <div className="score-container">          
-          <h1>Score : {String(150 - unclicked.size).padStart(3, "0")}</h1>
+          <h1>Score : {String(150 - unclicked.size).padStart(Math.floor(Math.log10(maxScore)) + 1, "0")}/{maxScore}</h1>
         </div>
       </header>
 
       <dialog open={gameOver}>
-        {score === 150 ? (
+        {score === maxScore ? (
           <>
             <b>YOU WIN!</b> <p>Your score is {score}</p>
           </>
@@ -56,8 +57,8 @@ function App() {
           setUnclicked={setUnclicked}
           gameOver={gameOver}
           setGameOver={setGameOver}
-          fetched={fetched}
           setFetched={setFetched}
+          maxScore={maxScore}
         />
         <Tile
           tileType={dice === 1 ? "unique" : "random"}
@@ -65,8 +66,8 @@ function App() {
           setUnclicked={setUnclicked}
           gameOver={gameOver}
           setGameOver={setGameOver}
-          fetched={fetched}
           setFetched={setFetched}
+          maxScore={maxScore}
         />
         <Tile
           tileType={dice === 2 ? "unique" : "random"}
@@ -74,8 +75,8 @@ function App() {
           setUnclicked={setUnclicked}
           gameOver={gameOver}
           setGameOver={setGameOver}
-          fetched={fetched}
           setFetched={setFetched}
+          maxScore={maxScore}
         />
         <Tile
           tileType={dice === 3 ? "unique" : "random"}
@@ -83,8 +84,8 @@ function App() {
           setUnclicked={setUnclicked}
           gameOver={gameOver}
           setGameOver={setGameOver}
-          fetched={fetched}
           setFetched={setFetched}
+          maxScore={maxScore}
         />
       </div>
     </>
